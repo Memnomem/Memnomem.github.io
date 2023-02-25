@@ -13,8 +13,11 @@
           You need to host your own proxy and use it instead. The proxy is based on CORS Anywhere (see https://github.com/Rob--W/cors-anywhere).
           ⚠️⚠️⚠️
         -->
-           <a-video src="assets/test.mp4" 
-                    width="1" loop="true" rotation="0 0 0" autoplay="true">
+         <a-assets>
+    <video id="vid" src="assets/test.mp4" autoplay="true" loop="true"></video>
+  </a-assets>
+           <a-video src=#vid
+                    width="1" rotation="0 0 0" >
        </a-video>
       </a-marker>
       <a-entity camera></a-entity>
