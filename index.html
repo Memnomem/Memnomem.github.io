@@ -18,5 +18,21 @@
       </a-entity>
       
     </a-scene>
+    
+        <script>
+      var video = document.getElementById("vid");
+      var clicked = false;
+
+      video.addEventListener("click", function() {
+        if (!clicked) {
+          video.play();
+          clicked = true;
+        } else {
+          video.pause();
+          clicked = false;
+        }
+      });
+    </script>
+    
   </body>
 </html>
