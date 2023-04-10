@@ -8,23 +8,29 @@
 
   </head>
   <body>
+    
     <a-scene mindar-image="imageTargetSrc: targets.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+      
       <a-assets>
+        
         <video autoplay muted playsinline class="clickable" loop="true" id="vid" src="assets/scroll.mp4"></video>
+        
       </a-assets>
 
       <a-camera position="0 0 0" look-controls="enabled: false" cursor="fuse: false; rayOrigin: mouse;" raycaster="far: ${customFields.libVersion}; objects: .clickable">
-                <a-entity
+      </a-camera>
+      
+      <a-entity mindar-image-target="targetIndex: 0">
+                        <a-entity
           position="0 0 -1.5"
           text="align: center;
                 width: 6;
                 wrapCount: 100;
                 color: black;
                 value: Click or tap to start video"
-          hide-on-play="#vid">
-        </a-entity>
-      </a-camera>
-      <a-entity mindar-image-target="targetIndex: 0">
+          hide-on-play="#vid">     </a-entity>
+        
+       <a-entity class="clickable" mindar-image-target="targetIndex: 0">
         <a-video rotation="0 0 0 " position="0 0 0.1" scale="1 1 1 1" src="#vid" play-on-click ></a-video>
       </a-entity>
     </a-scene>
