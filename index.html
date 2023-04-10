@@ -18,6 +18,22 @@
         <a-video rotation="0 0 0" position="0 0 0.1" scale="1 1 1" src="#vid" ></a-video>
       </a-entity>
     </a-scene>
+    
+    <button id="playButton">Play</button>
+    
+    <script>
+      var video = document.getElementById("vid");
+      var playButton = document.getElementById("playButton");
 
+      playButton.addEventListener("click", function() {
+        if (video.paused) {
+          video.play();
+          playButton.innerHTML = "Pause";
+        } else {
+          video.pause();
+          playButton.innerHTML = "Play";
+        }
+      });
+    </script>
   </body>
 </html>
