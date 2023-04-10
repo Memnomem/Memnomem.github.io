@@ -1,38 +1,42 @@
-  <html>
+ <!DOCTYPE html>
+<html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.0/dist/mindar-image-aframe.prod.js"></script>
   </head>
   <body>
-   <a-scene mindar-image="videoSource: #vid; imageTargetSrc: targets.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
-      
+    
+    <a-scene mindar-image="videoSource: #vid; imageTargetSrc: targets.mind;">
       <a-assets>
         <video autoplay muted playsinline loop="true" id="vid" src="assets/scroll.mp4"></video>
       </a-assets>
-
+      
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
       
       <a-entity mindar-image-target="targetIndex: 0">
-        <a-video rotation="0 0 0 " position="0 0 0.1" scale="1 1 1 1" src="#vid" clickable ></a-video>
+        <a-video rotation="0 0 0" position="0 0 0.1" scale="1 1 1" src="#vid"></a-video>
       </a-entity>
-      
     </a-scene>
     
-        <script>
+    <button id="playButton">Play</button>
+    
+    <script>
       var video = document.getElementById("vid");
+      var playButton = document.getElementById("playButton");
       var clicked = false;
 
-      video.addEventListener("click", function() {
+      playButton.addEventListener("click", function() {
         if (!clicked) {
           video.play();
+          playButton.innerHTML = "Pause";
           clicked = true;
         } else {
           video.pause();
+          playButton.innerHTML = "Play";
           clicked = false;
         }
       });
     </script>
-    
   </body>
 </html>
