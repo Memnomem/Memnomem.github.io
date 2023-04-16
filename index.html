@@ -6,7 +6,7 @@
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.0/dist/mindar-image-aframe.prod.js"></script>
   </head>
   <body>
-    <a-scene mindar-image="videoSource: #vid; imageTargetSrc: targets.mind;">
+    <a-scene mindar-image="videoSource: #vid1; imageTargetSrc: targets.mind;">
       <a-assets>
         <video id="vid1" autoplay muted playsinline loop="true" src="spiraletrue.mp4"></video>
         <video id="vid2" autoplay muted playsinline loop="true" src="nuagestrue.mp4"></video>
@@ -27,11 +27,17 @@
     <script>
       // Ajoute un événement de clic à la scène
       document.querySelector('a-scene').addEventListener('click', function () {
-        var video = document.getElementById("vid");
-        if (video.paused) {
-          video.play();
+        var video1 = document.getElementById("vid1");
+        var video2 = document.getElementById("vid2");
+        if (video1.paused) {
+          video1.play();
         } else {
-          video.pause();
+          video1.pause();
+        }
+        if (video2.paused) {
+          video2.play();
+        } else {
+          video2.pause();
         }
       });
     </script>
