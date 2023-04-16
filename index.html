@@ -9,7 +9,9 @@
     <a-scene mindar-image="videoSource: #vid1; imageTargetSrc: targets.mind;">
       <a-assets>
         <video id="vid1" autoplay muted playsinline loop="true" src="spiraletrue.mp4"></video>
-        <video id="vid2" autoplay muted playsinline loop="true" src="nuagestrue.mp4"></video>
+        <video id="vid2" autoplay muted playsinline loop="true" src="scrolltrue.mp4"></video>
+        <video id="vid3" autoplay muted playsinline loop="true" src="sursauttrue.mp4"></video>
+        <video id="vid4" autoplay muted playsinline loop="true" src="nuagestrue.mp4"></video>
       </a-assets>
       
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
@@ -21,6 +23,12 @@
       <a-entity mindar-image-target="targetIndex: 1">
         <a-video rotation="0 0 0" position="0 0 0.1" height="1.5" width="1" src="#vid2"></a-video>
       </a-entity>
+      <a-entity mindar-image-target="targetIndex: 2">
+        <a-video rotation="0 0 0" position="0 0 0.1" height="1.5" width="1" src="#vid3"></a-video>
+      </a-entity>
+      <a-entity mindar-image-target="targetIndex: 3">
+        <a-video rotation="0 0 0" position="0 0 0.1" height="1.5" width="1" src="#vid4"></a-video>
+      </a-entity>
       
     </a-scene>
 
@@ -29,15 +37,31 @@
       document.querySelector('a-scene').addEventListener('click', function () {
         var video1 = document.getElementById("vid1");
         var video2 = document.getElementById("vid2");
+        var video3 = document.getElementById("vid3");
+        var video4 = document.getElementById("vid4");
+        
         if (video1.paused) {
           video1.play();
         } else {
           video1.pause();
         }
+        
         if (video2.paused) {
           video2.play();
         } else {
           video2.pause();
+        }
+        
+        if (video3.paused) {
+          video3.play();
+        } else {
+          video3.pause();
+        }
+        
+        if (video4.paused) {
+          video4.play();
+        } else {
+          video4.pause();
         }
       });
     </script>
